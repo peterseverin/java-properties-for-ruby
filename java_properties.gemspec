@@ -19,5 +19,5 @@ be provided as Strings or Symbols, but internally they are Symbols."
   s.test_files = ["test/test_data.rb","test/test_helper.rb","test/test_java_properties.rb"]
   s.rdoc_options = ["--main", "README.txt"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]
-  s.executables = ["bin/properties2yaml"]
+  s.executables = ["properties2yaml"]
 end
