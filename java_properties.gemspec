@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = "java_properties"
-  s.version = "0.0.4"
-  s.date = "2008-06-14"
+  s.version = "0.0.5"
+  s.date = "2009-08-04"
   s.summary = "Simple gem for reading/writing Java properties files from Ruby."
   s.email = "flergl@flergl.net"
   s.homepage = "http://github.com/flergl/java-properties-for-ruby"
