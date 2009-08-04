@@ -80,7 +80,7 @@ module JavaProperties
 	  elsif z >= 192 && z <= 223 then
 	    # 2 bytes
 	    y = chars.shift[0].to_i
-	    s << "\\u#{sprintf('%02x',( (z-192)*64 + (y-128) ))}"
+	    s << "\\u#{sprintf('%04x',( (z-192)*64 + (y-128) ))}"
 	  elsif z >= 224 && z <= 239 then
 	    # 3 bytes
 	    y = chars.shift[0].to_i
