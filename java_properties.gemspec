@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name = "java_properties"
+  s.name = "peterseverin-java_properties"
   s.version = "0.0.6"
   s.date = "2009-08-04"
   s.summary = "Simple gem for reading/writing Java properties files from Ruby."
