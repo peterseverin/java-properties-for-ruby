@@ -1,6 +1,12 @@
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'java_properties/version'
+require 'rake'
+
 Gem::Specification.new do |s|
   s.name = "peterseverin-java_properties"
-  s.version = "0.0.6"
+  s.version = JavaProperties::VERSION::STRING
   s.date = "2009-08-04"
   s.summary = "Simple gem for reading/writing Java properties files from Ruby."
   s.email = "flergl@flergl.net"

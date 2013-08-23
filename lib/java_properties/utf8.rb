@@ -73,39 +73,39 @@ module JavaProperties
 	s = ""
 	chars = string.split( // )
 	while(chars.size > 0) do
-	  z = chars.shift[0].to_i
+	  z = chars.shift.unpack('C')[0]
 	  if z >= 0 && z <= 127 then
 	    # 1 byte -- essentially ascii
 	    s << z
 	  elsif z >= 192 && z <= 223 then
 	    # 2 bytes
-	    y = chars.shift[0].to_i
+	    y = chars.shift.unpack('C')[0]
 	    s << "\\u#{sprintf('%04x',( (z-192)*64 + (y-128) ))}"
 	  elsif z >= 224 && z <= 239 then
 	    # 3 bytes
-	    y = chars.shift[0].to_i
-	    x = chars.shift[0].to_i
+	    y = chars.shift.unpack('C')[0]
+	    x = chars.shift.unpack('C')[0]
 	    s << "\\u#{sprintf('%04x',( (z-224)*4096 + (y-128)*64 + (x-128) ))}"
 	  elsif z >= 240 && z <= 247 then
 	    # 4 bytes
-	    y = chars.shift[0].to_i
-	    x = chars.shift[0].to_i
-	    w = chars.shift[0].to_i
+	    y = chars.shift.unpack('C')[0]
+	    x = chars.shift.unpack('C')[0]
+	    w = chars.shift.unpack('C')[0]
 	    s << "\\u#{sprintf('%06x',( (z-240)*262144 + (y-128)*4096 + (x-128)*64 + (w-128) ))}"
 	  elsif z >= 248 && z <= 251 then
 	    # 5 bytes
-	    y = chars.shift[0].to_i
-	    x = chars.shift[0].to_i
-	    w = chars.shift[0].to_i
-	    v = chars.shift[0].to_i
+	    y = chars.shift.unpack('C')[0]
+	    x = chars.shift.unpack('C')[0]
+	    w = chars.shift.unpack('C')[0]
+	    v = chars.shift.unpack('C')[0]
 	    s << "\\u#{sprintf('%08x',( (z-248)*16777216 + (y-128)*262144 + (x-128)*4096 + (w-128)*64 + (v-128) ))}"
 	  elsif z >= 252 && z <= 253 then
 	    # 6 bytes
-	    y = chars.shift[0].to_i
-	    x = chars.shift[0].to_i
-	    w = chars.shift[0].to_i
-	    v = chars.shift[0].to_i
-	    u = chars.shift[0].to_i
+	    y = chars.shift.unpack('C')[0]
+	    x = chars.shift.unpack('C')[0]
+	    w = chars.shift.unpack('C')[0]
+	    v = chars.shift.unpack('C')[0]
+	    u = chars.shift.unpack('C')[0]
 	    s << "\\u#{sprintf('%010x',( (z-252)*1073741824 + (y-128)*16777216 + (x-128)*262144 + (w-128)*4096 + (v-128)*64 + (u-128) ))}"
 	  else
 	    s << z

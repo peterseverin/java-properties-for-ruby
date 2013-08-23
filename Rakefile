@@ -1,4 +1,12 @@
-require 'config/requirements'
-require 'config/hoe' # setup Hoe + all gem configuration
+require "bundler/gem_tasks"
+require 'rake/testtask'
+require "rake/clean"
 
-Dir['tasks/**/*.rake'].each { |rake| load rake }
+CLEAN.add('build')
+CLOBBER.add('pkg')
+
+Rake::TestTask.new do |t|
+  t.libs << "."
+  t.test_files = FileList['test/test_*.rb']
+  t.verbose = true
+end
