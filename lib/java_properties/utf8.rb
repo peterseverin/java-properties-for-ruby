@@ -19,7 +19,7 @@ module JavaProperties
       # Replaces \uXXXX escaped chars with proper UTF-8 bytes
       
       def self.decode(string)
-	string.gsub!( /\\[uU]([0-9a-fA-f]{1,6})/) do |c|
+	string.gsub!( /\\u([0-9a-f]{1,6})/i) do |c|
 	  Encoding::Utf8.utf8($1.hex)
 	end
 	string
