@@ -15,6 +15,13 @@ class TestJavaProperties < Test::Unit::TestCase
 		assert_equal unencoded, decoded
 	end
 
+	def test_utf8_encode_decode_finnish
+		unencoded = "\303\244e"
+		encoded = JavaProperties::Encoding::Utf8.encode(unencoded)
+		decoded = JavaProperties::Encoding::Utf8.decode(encoded)
+		assert_equal unencoded, decoded
+	end
+
 	def test_utf8_decode
 		decoded = JavaProperties::Encoding::Utf8.decode('\uac00')
 		assert_equal "\352\260\200", decoded
