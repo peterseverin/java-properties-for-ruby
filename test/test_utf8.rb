@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'java_properties/utf8'
 
 class TestJavaProperties < Test::Unit::TestCase

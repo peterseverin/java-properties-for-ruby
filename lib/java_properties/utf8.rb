@@ -28,7 +28,7 @@ module JavaProperties
       # Gets the UTF-8 encoding of a given unicode code point (provided as an Fixnum)
       
       def self.utf8(ud)
-	s = ""
+	s = []
 	if ud < 128 then
 	  # UTF-8 is 1 byte long, the value of ud.
 	  s << ud
@@ -63,7 +63,7 @@ module JavaProperties
 	  s << (128 + ((ud.div 64) % 64))
 	  s << (128 + (ud % 64))
 	end
-	s
+	s.pack('C*').force_encoding('UTF-8')
       end
     
       # Encodes all UTF-8 characters in the provided string using \uXXXX
