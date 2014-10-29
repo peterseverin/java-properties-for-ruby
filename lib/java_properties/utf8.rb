@@ -63,7 +63,9 @@ module JavaProperties
 	  s << (128 + ((ud.div 64) % 64))
 	  s << (128 + (ud % 64))
 	end
-	s.pack('C*').force_encoding('UTF-8')
+	s_utf = s.pack('C*')
+	s_utf.force_encoding('UTF-8') if s_utf.respond_to?(:force_encoding)
+	s_utf
       end
     
       # Encodes all UTF-8 characters in the provided string using \uXXXX
