@@ -2,7 +2,6 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'java_properties/version'
-require 'rake'
 
 Gem::Specification.new do |s|
   s.name = "peterseverin-java_properties"
@@ -26,4 +25,6 @@ be provided as Strings or Symbols, but internally they are Symbols."
   s.rdoc_options = ["--main", "README.txt"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]
   s.executables = ["properties2yaml"]
+
+  s.add_development_dependency "rake"
 end
